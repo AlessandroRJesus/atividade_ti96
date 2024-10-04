@@ -34,35 +34,40 @@ class Empresa
 
     // Definindo a classe Carro
     class Carro 
-{
-    // Propriedades da classe
-    public $marca;  
-    public $modelo; 
-    public $cor;
-    public $ano;
-    public $preco;    
+    {
+         // Propriedades da classe
+        public $marca;  
+        public $modelo; 
+        public $cor;
+        public $ano;
+        public $preco;    
 
-    // Construtor da classe
-    public function car($marca, $modelo, $cor, $ano, $preco) // definindo os parametros 
-    {     
+        // metodo car
+        public function car($marca, $modelo, $cor, $ano, $preco) // definindo os parametros 
+        {     
+        
         // As propriedades 
         $this->marca = $marca;  
         $this->modelo = $modelo; 
         $this->cor = $cor;
         $this->ano = $ano; 
         $this->preco = $preco;     
+        
+        }
+
+        // Método para exibir as informações do carro
+        public function exibirInformacoes() 
+        {
+        
+            echo "A marca do carro é: " . $this->marca . "<br>"; 
+            echo "O modelo do carro é: " . $this->modelo . "<br>";
+            echo "A cor do carro é: " . $this->cor . "<br>"; 
+            echo "O ano do carro é: " . $this->ano . "<br>";
+            echo "O preço do carro é de R$ " . $this->preco . " Reais" . "<br><br>";       
+        
+        }
     }
 
-    // Método para exibir as informações do carro
-    public function exibirInformacoes() 
-    {
-        echo "A marca do carro é: " . $this->marca . "<br>"; 
-        echo "O modelo do carro é: " . $this->modelo . "<br>";
-        echo "A cor do carro é: " . $this->cor . "<br>"; 
-        echo "O ano do carro é: " . $this->ano . "<br>";
-        echo "O preço do carro é de R$ " . $this->preco . " Reais" . "<br><br>";       
-    }
-}
     // Criando um objeto 
     $carro1 = new Carro();
 
