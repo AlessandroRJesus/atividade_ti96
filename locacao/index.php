@@ -30,7 +30,6 @@ if (!$dados) {
       <div class="navbar-nav">
         <a class="nav-link" aria-current="page" href="index.php">Home</a>
         <a class="nav-link" href="inserir.php">Inserir</a>
-        <a class="nav-link" href="atualizar.php">Atualizar</a>
       </div>
     </div>
   </div>
@@ -68,16 +67,29 @@ if (!$dados) {
                             <td>{$filme['produtora']}</td>
                             <td>R$ {$filme['valor']}</td>
                             <td>
-                                <form method='POST' action='index.php'>
-                                    <input type='hidden' name='id' value='{$filme['id']}'> 
-                                     <input type='submit' name='atualizarcliente' value='Atualizar'>  
-                                    <input type='submit' name='deletarcliente' value='Deletar'>
-                                </form>
+                                <div class='d-flex'>
+                                    <form method='POST' action='atualizar.php' class='me-2'>
+                                        <input type='hidden' name='id' value='{$filme['id']}'> 
+                                        <input type='hidden' name='filme' value='{$filme['filme']}'> 
+                                        <input type='hidden' name='genero' value='{$filme['genero']}'> 
+                                        <input type='hidden' name='indicacao' value='{$filme['indicacao']}'> 
+                                        <input type='hidden' name='lancamento' value='{$filme['lancamento']}'> 
+                                        <input type='hidden' name='duracao' value='{$filme['duracao']}'> 
+                                        <input type='hidden' name='diretor' value='{$filme['diretor']}'> 
+                                        <input type='hidden' name='produtora' value='{$filme['produtora']}'> 
+                                        <input type='hidden' name='valor' value='{$filme['valor']}'> 
+                                        <input type='submit' name='atualizarfilme' value='Atualizar' class='btn btn-warning'>
+                                    </form>
+                                    <form method='POST' action='deletar.php'>
+                                        <input type='hidden' name='id' value='{$filme['id']}'> 
+                                        <input type='submit' name='deletarcliente' value='Deletar' class='btn btn-danger'>
+                                    </form>
+                                </div>
                             </td>
                           </tr>";
                 }
             } else {
-                echo "<tr><td Nenhum filme encontrado.</td></tr>";
+                echo "<tr><td>Nenhum filme encontrado.</td></tr>"; 
             }
             ?>
         </tbody>
